@@ -66,8 +66,6 @@ func main() {
 	rootCmd.Flags().StringVar(&logLevel, "log-level", config.LogLevel, "Log level (debug, info, warn, error)")
 	rootCmd.Flags().BoolVar(&dryRun, "dry-run", false, "Dry run mode (do not send WOL packet)")
 
-	rootCmd.MarkFlagsMutuallyExclusive("dry-run", "mac-address")
-
 	if err := rootCmd.Execute(); err != nil {
 		fmt.Println("error executing root command:", err)
 		os.Exit(1)
@@ -157,6 +155,7 @@ func run(_ *cobra.Command, _ []string) error {
 						if _, err := conn.Write(magicPacket); err != nil {
 							logger.Error("Error sending WOL packet", slog.With("error", err))
 						}
+						logger.Info("Magic packet sent")
 					} else {
 						logger.Info("Dry run mode: WOL packet not sent")
 					}
