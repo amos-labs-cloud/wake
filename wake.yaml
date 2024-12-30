@@ -1,0 +1,5 @@
+pin: 17
+mac_address: "00:11:22:33:44:55"
+interface: "wlan0"
+log_level: "info"
+dry_run: true # Set to false to enable the wake-on-lan feature, configure the above values for your system.
