@@ -13,7 +13,9 @@ run `make packages`
 ## Building
 
 run `make build` to build the binary with no cross compilation for where ever you are running the build.
+
 run `make rpi-zero` to build the binary for a raspberry pi zero.
+
 run `make rpi-5` to build the binary for a raspberry pi 5.
 
 ## Wiring for a Keyes KY-004 Button
@@ -24,7 +26,9 @@ run `make rpi-5` to build the binary for a raspberry pi 5.
 
 
 Connect the VCC pin to a 5v pin on the raspberry pi. 3.3v is probably fine as well, but I didn't check, I'll check later.
+
 Connect the GND pin to a GND pin on the raspberry pi.
+
 Connect the S pin to a GPIO pin on the raspberry pi.
 
 ## Running
